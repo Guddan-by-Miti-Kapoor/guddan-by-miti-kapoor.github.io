@@ -85,11 +85,20 @@ h1{font-family:Cinzel,"Playfair Display",Georgia,serif;font-weight:500;color:var
 .wa svg{width:17px;height:17px;fill:currentColor}
 #worn{margin-top:44px}
 #worn h2{text-align:center;font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:18px;margin:0 0 4px;color:var(--gold)}
-@media (max-width:600px){.wgrid{grid-template-columns:repeat(2,1fr)}}
+
 #worn .sub{text-align:center;font-style:italic;margin:0 0 16px}
-.wgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.wgrid{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:260px 260px;gap:14px;max-width:1000px;margin:0 auto}
+.wgrid figure{margin:0;position:relative;overflow:hidden;border-radius:6px;border:1px solid var(--line);box-shadow:0 10px 28px rgba(0,0,0,.45)}
+.wgrid figure:first-child{grid-row:1/3}
+.wgrid figure:nth-child(2){grid-column:2/4}
+.wgrid figure img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.wgrid figure:hover img{transform:scale(1.05)}
+.wgrid figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;background:linear-gradient(transparent,rgba(20,8,10,.85));color:#f3dfb4;font-family:"Pinyon Script",cursive;font-size:30px;line-height:1}
+.pcta{text-align:center;margin-top:22px}
+.pcta a{display:inline-flex;align-items:center;gap:10px;background:var(--btn);color:var(--btn-ink);text-decoration:none;padding:11px 26px;border-radius:99px;font-size:17px;letter-spacing:.04em}
+.pcta svg{width:19px;height:19px;fill:currentColor}
 .wgrid::-webkit-scrollbar{height:6px}.wgrid::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
-.wgrid img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;display:block;box-shadow:0 8px 20px rgba(0,0,0,.4);border:1px solid var(--line);outline:1px solid var(--line);outline-offset:-5px;border-radius:4px;background:var(--line)}
+
 #studio{margin-top:44px}
 #studio h2{text-align:center;font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:18px;margin:0 0 16px;color:var(--gold)}
 .sfeat{max-width:400px;margin:0 auto 28px}
@@ -118,6 +127,8 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
 .num{display:block;margin-top:10px;font-size:15px;color:var(--txt)}
 .fab{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));background:#25D366;color:#fff;text-decoration:none;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(0,0,0,.3);z-index:20}
 .fab svg{width:30px;height:30px;fill:#fff}
+.wgrid figure:nth-child(2) img{object-position:center 38%}
+@media (max-width:700px){.wgrid{grid-template-columns:1fr 1fr;grid-template-rows:360px 220px 220px}.wgrid figure:first-child{grid-row:1;grid-column:1/3}.wgrid figure:nth-child(2){grid-row:2;grid-column:1/3}.wgrid figcaption{font-size:24px}}
 </style>
 </head>
 <body>
@@ -147,6 +158,7 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
   <h2>At our pop-ups</h2>
   <p class="sub">Meet Guddan in person, at exhibitions and pop-ups.</p>
   <div class="wgrid" id="wgrid"></div>
+  <div class="pcta"><a id="pcta" target="_blank" rel="noopener"></a></div>
 </section>
 
 <section id="studio">
@@ -327,7 +339,8 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
   rimgs.concat(rimgs,rimgs,rimgs).forEach(function(n,i){var im=el("img");im.src="img/"+n+".jpg";im.alt="";im.loading=i<6?"eager":"lazy";rt.appendChild(im);});
 
   var wg=document.getElementById("wgrid");
-  for(var k=1;k<=4;k++){var wi=el("img");wi.src="img/popup-"+k+".jpg";wi.alt="Guddan by Miti Kapoor at a pop-up";wi.loading="lazy";wg.appendChild(wi);}
+  [["popup-2","Styled, in person"],["popup-1","Find us at our stall"],["popup-3","Ajrakh, up close"],["popup-4","Fresh off the rack"]].forEach(function(x){var f=el("figure"),im=el("img");im.src="img/"+x[0]+".jpg";im.alt=x[1];im.loading="lazy";f.appendChild(im);var c=el("figcaption");c.textContent=x[1];f.appendChild(c);wg.appendChild(f);});
+  var pc=document.getElementById("pcta");pc.innerHTML=ICON_WA+"<span>Ask about our next pop-up</span>";pc.href="https://wa.me/"+WA+"?text="+encodeURIComponent("Hi Guddan! When and where is your next pop-up?");
 
   var sg=document.getElementById("sgrid");
   studio.forEach(function(s,idx){
