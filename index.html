@@ -208,7 +208,15 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
     {code:"GD-036",title:"Tea at Four",cat:"Chikankari",desc:"Mauve angrakha with white Chikankari bootis, a jaali sleeve and a zari-edged dupatta.",photos:1,videos:[],top:true},
     {code:"GD-037",title:"Winter Wedding",cat:"Chikankari",desc:"Steel blue crush with a pearl and gota neckline and a kota doria dupatta.",photos:1,videos:[],top:true},
     {code:"GD-038",title:"Moonlit Courtyard",cat:"Chikankari",desc:"Smoky teal crush with a gota patti neckline and sequin bootis.",photos:1,videos:[],top:true},
-    {code:"GD-039",title:"Lucknow Letters",cat:"Chikankari",desc:"Oatmeal with white Chikankari vines, pin-tucks and fine sequin work.",photos:1,videos:[],top:true}
+    {code:"GD-039",title:"Lucknow Letters",cat:"Chikankari",desc:"Oatmeal with white Chikankari vines, pin-tucks and fine sequin work.",photos:1,videos:[],top:true},
+    {code:"GD-040",title:"Her Trousseau",cat:"Suit Sets",desc:"Banarasi suit set in rani pink with silver zari bootis and a woven jaal dupatta.",photos:1,videos:[],feat:true},
+    {code:"GD-041",title:"Rangoli at the Door",cat:"Suit Sets",desc:"Banarasi suit set in maroon with zari bootis and a chevron zari dupatta.",photos:1,videos:[],feat:true},
+    {code:"GD-042",title:"The Night Train Home",cat:"Suit Sets",desc:"Banarasi suit set in midnight navy with zari bootis and a chevron zari dupatta.",photos:1,videos:[],feat:true},
+    {code:"GD-043",title:"Rain on the Rooftop",cat:"Suit Sets",desc:"Banarasi suit set in deep teal with zari bootis and a chevron zari dupatta.",photos:1,videos:[],feat:true},
+    {code:"GD-044",title:"Her Wedding Album",cat:"Suit Sets",desc:"Banarasi suit set in plum with zari bootis and a chevron zari dupatta.",photos:1,videos:[],feat:true},
+    {code:"GD-045",title:"Red Bangles",cat:"Suit Sets",desc:"Banarasi suit set in festive red with zari bootis and a chevron zari dupatta.",photos:1,videos:[],feat:true},
+    {code:"GD-046",title:"The Garden She Grew Up In",cat:"Suit Sets",desc:"Banarasi suit set in peacock teal with zari bootis and a floral jaal dupatta.",photos:1,videos:[],feat:true},
+    {code:"GD-047",title:"Her Favourite Dupatta",cat:"Suit Sets",desc:"Banarasi suit set in soft lilac with zari bootis and a woven jaal dupatta.",photos:1,videos:[],feat:true}
   ];
   var studio=[
     {v:"story",title:"To Varanasi, for the weave"},
@@ -286,7 +294,7 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
   function group(p){return SAREE.indexOf(p.cat)>=0&&!/Suit/.test(p.desc)?"Sarees":p.cat;}
   var groups=["Sarees","Suit Sets","Chikankari"];
   var cards={};pieces.forEach(function(p){cards[p.code]=buildCard(p);});
-  function inGroup(g){return pieces.filter(function(p){return group(p)===g;});}
+  function inGroup(g){var l=pieces.filter(function(p){return group(p)===g;});return l.filter(function(p){return p.feat;}).concat(l.filter(function(p){return !p.feat;}));}
   function render(){
     stopOthers(null);grid.textContent="";
     if(filter==="All"){
@@ -294,7 +302,7 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
         var list=inGroup(g);if(!list.length)return;
         var h=el("div","ghead");var t=el("h3");t.textContent=g;h.appendChild(t);
         grid.appendChild(h);
-        list.slice(0,3).forEach(function(p){grid.appendChild(cards[p.code]);});
+        list.filter(function(p){return p.feat;}).concat(list.filter(function(p){return !p.feat;})).slice(0,3).forEach(function(p){grid.appendChild(cards[p.code]);});
         if(list.length>3){var w=el("div","gmore");var b=el("button","chip");b.textContent="View all "+g.toLowerCase()+" →";
           b.onclick=function(){filter=g;renderChips();render();document.getElementById("chips").scrollIntoView({behavior:"smooth"});};w.appendChild(b);grid.appendChild(w);}
       });
