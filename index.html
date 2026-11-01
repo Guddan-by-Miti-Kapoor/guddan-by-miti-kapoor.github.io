@@ -293,9 +293,9 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
       groups.forEach(function(g){
         var list=inGroup(g);if(!list.length)return;
         var h=el("div","ghead");var t=el("h3");t.textContent=g;h.appendChild(t);
-        var c=el("span","gcount");c.textContent=list.length+" pieces";h.appendChild(c);grid.appendChild(h);
+        grid.appendChild(h);
         list.slice(0,3).forEach(function(p){grid.appendChild(cards[p.code]);});
-        if(list.length>3){var w=el("div","gmore");var b=el("button","chip");b.textContent="View all "+list.length+" "+g.toLowerCase()+" →";
+        if(list.length>3){var w=el("div","gmore");var b=el("button","chip");b.textContent="View all "+g.toLowerCase()+" →";
           b.onclick=function(){filter=g;renderChips();render();document.getElementById("chips").scrollIntoView({behavior:"smooth"});};w.appendChild(b);grid.appendChild(w);}
       });
     } else {
