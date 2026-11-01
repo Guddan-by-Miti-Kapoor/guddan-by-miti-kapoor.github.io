@@ -207,10 +207,8 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
     var m=el("div","meta");
     m.appendChild(el("span","code",p.code));
     var b=el("b");b.textContent=p.title;m.appendChild(b);
-    var c=el("span","col");c.textContent=p.cat+(p.videos.length?" · with video":"");m.appendChild(c);
+    var c=el("span","col");c.textContent=p.cat;m.appendChild(c);
     var d=el("p","desc");d.textContent=p.desc;m.appendChild(d);
-    var a=el("a","wa",ICON_WA+"<span>Enquire on WhatsApp</span>");a.href=waLink(p);a.target="_blank";a.rel="noopener";
-    var wrap=el("div");wrap.appendChild(a);m.appendChild(wrap);
     card.appendChild(m);
     return card;
   }
