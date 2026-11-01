@@ -67,6 +67,12 @@ h1{font-family:"Playfair Display",Georgia,serif;font-weight:500;color:var(--ink)
 .arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:34px;height:34px;border-radius:50%;border:0;background:rgba(250,242,225,.85);color:#6b1426;font-size:20px;line-height:34px;cursor:pointer;display:none}
 .arrow.l{left:8px}.arrow.r{right:8px}
 @media (hover:hover){.media:hover .arrow{display:block}}
+.ghead{grid-column:1/-1;display:flex;align-items:baseline;justify-content:center;gap:14px;margin:18px 0 0;border-top:1px solid var(--line);padding-top:26px}
+.ghead:first-child{border-top:0;padding-top:0;margin-top:0}
+.ghead h3{font-family:"Playfair Display",Georgia,serif;font-weight:500;color:var(--ink);font-size:30px;margin:0;letter-spacing:.04em}
+.gcount{color:var(--gold);font-size:13px;letter-spacing:.2em;text-transform:uppercase}
+.gmore{grid-column:1/-1;text-align:center;margin:4px 0 10px}
+.gmore .chip{background:var(--btn);color:var(--btn-ink);border-color:var(--btn);padding:9px 22px}
 .meta{padding:14px 16px 18px;text-align:center}
 .code{display:inline-block;border:1px solid var(--gold);color:var(--gold);letter-spacing:.2em;font-size:11px;padding:1px 10px;border-radius:2px;text-transform:uppercase}
 .meta b{display:block;font-family:"Playfair Display",Georgia,serif;font-weight:500;color:var(--ink);font-size:22px;margin-top:6px;line-height:1.25}
@@ -276,20 +282,35 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
   }
 
   var grid=document.getElementById("grid"),chips=document.getElementById("chips"),filter="All";
-  pieces.forEach(function(p){grid.appendChild(buildCard(p));});
-  var cats=["All"];pieces.forEach(function(p){if(cats.indexOf(p.cat)<0)cats.push(p.cat);});
+  var SAREE=["Patola","Ajrakh","Banarasi","Tissue"];
+  function group(p){return SAREE.indexOf(p.cat)>=0&&!/Suit/.test(p.desc)?"Sarees":p.cat;}
+  var groups=["Sarees","Suit Sets","Chikankari"];
+  var cards={};pieces.forEach(function(p){cards[p.code]=buildCard(p);});
+  function inGroup(g){return pieces.filter(function(p){return group(p)===g;});}
+  function render(){
+    stopOthers(null);grid.textContent="";
+    if(filter==="All"){
+      groups.forEach(function(g){
+        var list=inGroup(g);if(!list.length)return;
+        var h=el("div","ghead");var t=el("h3");t.textContent=g;h.appendChild(t);
+        var c=el("span","gcount");c.textContent=list.length+" pieces";h.appendChild(c);grid.appendChild(h);
+        list.slice(0,3).forEach(function(p){grid.appendChild(cards[p.code]);});
+        if(list.length>3){var w=el("div","gmore");var b=el("button","chip");b.textContent="View all "+list.length+" "+g.toLowerCase()+" →";
+          b.onclick=function(){filter=g;renderChips();render();document.getElementById("chips").scrollIntoView({behavior:"smooth"});};w.appendChild(b);grid.appendChild(w);}
+      });
+    } else {
+      inGroup(filter).forEach(function(p){grid.appendChild(cards[p.code]);});
+    }
+  }
   function renderChips(){
     chips.textContent="";
-    cats.forEach(function(c){
+    ["All"].concat(groups).forEach(function(c){
       var b=el("button","chip");b.textContent=c;b.setAttribute("aria-pressed",String(c===filter));
-      b.onclick=function(){filter=c;renderChips();
-        [].forEach.call(grid.children,function(card){card.hidden=!(c==="All"||card.dataset.cat===c);});
-        stopOthers(null);
-      };
+      b.onclick=function(){filter=c;renderChips();render();};
       chips.appendChild(b);
     });
   }
-  renderChips();
+  renderChips();render();
 
   var rimgs=["worn-1","worn-2","worn-3","worn-4","worn-5","worn-6","worn-7"];
   var rt=document.getElementById("rt");
