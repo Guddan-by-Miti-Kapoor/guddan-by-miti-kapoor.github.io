@@ -208,7 +208,7 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
     {code:"GD-019",title:"Roses from Her Garden",cat:"Suit Sets",desc:"Rose-red silk with meenakari roses and a wide floral zari border.",photos:2,videos:[]},
     {code:"GD-020",title:"Lucknow Afternoons",cat:"Chikankari",desc:"Hand-embroidered Chikankari co-ord sets in mint, lemon, peach and rose.",photos:3,videos:["gd020-v1"]},
     {code:"GD-021",title:"Nani's Emeralds",cat:"Banarasi",desc:"Emerald Banarasi silk with a silver zari jaal, styled with rani pink and indigo.",photos:3,videos:["gd021-v1"]},
-    {code:"GD-022",title:"Through the Jaali",cat:"Suit Sets",desc:"Deep purple brocade with an all-over silver zari jaal and a woven yoke panel. Also in blue and black.",photos:3,videos:[]},
+    {code:"GD-022",title:"Through the Jaali",cat:"Suit Sets",desc:"Purple Banarasi brocade co-ord set with an all-over silver zari jaal. Also in blue and black.",photos:4,videos:[]},
     {code:"GD-023",title:"Summer Holidays",cat:"Suit Sets",desc:"Designer summer silk co-ord set in royal blue, with a woven V-neck zari yoke. Also in mustard, bottle green and purple.",photos:3,videos:[]},
     {code:"GD-024",title:"Sunday Lunch",cat:"Suit Sets",desc:"Teal silk with a woven zari yoke panel and a fine zari border.",photos:2,videos:[]},
     {code:"GD-025",title:"Flowers for Maa",cat:"Suit Sets",desc:"Violet silk with a tall woven floral bouquet and a flowering zari border. Also in mustard and rani pink.",photos:3,videos:[]},
@@ -272,7 +272,7 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
     var slides=[];
     for(var n=1;n<=p.photos;n++){
       var s=el("div","slide"),im=el("img");
-      im.src="img/"+p.code.toLowerCase().replace("-","")+"-"+n+".jpg";if(p.top)im.style.objectPosition="center 15%";im.alt=p.title+" – photo "+n;im.loading="lazy";
+      im.src="img/"+p.code.toLowerCase().replace("-","")+"-"+n+".jpg";if(p.code==="GD-022"&&n===1){im.style.objectFit="contain";im.style.background="#f4f2ef";}if(p.top)im.style.objectPosition="center 15%";im.alt=p.title+" – photo "+n;im.loading="lazy";
       s.appendChild(im);slides.push(s);
     }
     p.videos.forEach(function(v,k){slides.push(videoSlide(v,""));});
