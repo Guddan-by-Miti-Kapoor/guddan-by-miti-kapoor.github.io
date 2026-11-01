@@ -155,13 +155,17 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
     {code:"GD-016",title:"Aasmani",cat:"Suit Sets",desc:"Sky-blue kora with a gold zari border and large woven paisleys.",photos:2,videos:[]},
     {code:"GD-017",title:"Sitara",cat:"Suit Sets",desc:"Midnight blue scattered with zari stars, with a pop of red.",photos:2,videos:[]},
     {code:"GD-018",title:"Kesariya",cat:"Suit Sets",desc:"Saffron silk with a column of silver zari trees and a sheer kora dupatta.",photos:2,videos:[]},
-    {code:"GD-019",title:"Gulab",cat:"Suit Sets",desc:"Rose-red silk with meenakari roses and a wide floral zari border.",photos:1,videos:[]}
+    {code:"GD-019",title:"Gulab",cat:"Suit Sets",desc:"Rose-red silk with meenakari roses and a wide floral zari border.",photos:1,videos:[]},
+    {code:"GD-020",title:"Lucknowi Pastels",cat:"Chikankari",desc:"Hand-embroidered Chikankari co-ord sets in mint, lemon, peach and rose.",photos:3,videos:["gd020-v1"]},
+    {code:"GD-021",title:"Panna",cat:"Banarasi",desc:"Emerald Banarasi silk with a silver zari jaal, styled with rani pink and indigo.",photos:3,videos:["gd021-v1"]}
   ];
   var studio=[
     {v:"story",title:"To Varanasi, for the weave"},
     {v:"studio1",title:"Chosen by hand, one by one"},
     {v:"studio2",title:"Rani pink, unfurled"},
-    {v:"studio3",title:"Inside the Guddan wardrobe"}
+    {v:"studio3",title:"Inside the Guddan wardrobe"},
+    {v:"studio4",title:"With gratitude"},
+    {v:"studio5",title:"Friends of Guddan"}
   ];
 
   function waLink(p){
@@ -180,7 +184,7 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
     b.onclick=function(){
       var v=document.createElement("video");
       v.src="vid/"+name+".mp4";v.controls=true;v.playsInline=true;v.setAttribute("playsinline","");v.poster=im.src;
-      v.addEventListener("play",function(){stopOthers(v);});
+      v.addEventListener("play",function(){stopOthers(v);});v.addEventListener("loadedmetadata",function(){if(v.videoWidth>v.videoHeight)v.style.objectFit="contain";});
       s.replaceChild(v,im);b.remove();
       var p=v.play();if(p&&p.catch)p.catch(function(){});
     };
@@ -243,7 +247,7 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
   renderChips();
 
   var wg=document.getElementById("wgrid");
-  for(var k=1;k<=6;k++){var wi=el("img");wi.src="img/worn-"+k+".jpg";wi.alt="A Guddan customer wearing her saree";wi.loading="lazy";wg.appendChild(wi);}
+  for(var k=1;k<=7;k++){var wi=el("img");wi.src="img/worn-"+k+".jpg";wi.alt="A Guddan customer wearing her saree";wi.loading="lazy";wg.appendChild(wi);}
 
   var sg=document.getElementById("sgrid");
   studio.forEach(function(s){
