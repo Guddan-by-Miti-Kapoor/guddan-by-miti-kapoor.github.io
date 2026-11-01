@@ -13,11 +13,11 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f1e2c6">
+<meta name="theme-color" content="#1d0f12">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236b1426'/%3E%3Ctext x='32' y='44' font-size='38' text-anchor='middle' fill='%23f1e2c6' font-family='Georgia'%3EG%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Pinyon+Script&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f1e2c6;--card:#faf2e1;--ink:#6b1426;--txt:#3d2a26;--gold:#a07328;--line:#cdb27a;--btn:#6b1426;--btn-ink:#faf2e1}
+:root{--bg:#1d0f12;--card:#2a161a;--ink:#e8c98a;--txt:#efe0c6;--gold:#d3a85a;--line:#4d3036;--btn:#d3a85a;--btn-ink:#2a1014}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--txt);font-family:"Cormorant Garamond",Georgia,serif;font-size:18px;line-height:1.5;
@@ -25,9 +25,9 @@ body{margin:0;background:var(--bg);color:var(--txt);font-family:"Cormorant Garam
 .wrap{max-width:1000px;margin:0 auto;padding:18px 16px 110px}
 .arch{border:5px double var(--ink);border-bottom:0;border-radius:999px 999px 0 0/170px 170px 0 0;padding:70px 20px 8px;text-align:center;margin:0 auto;max-width:640px}
 .hero{display:grid;grid-template-columns:1fr;gap:18px;align-items:stretch;max-width:1000px;margin:0 auto}
-.hero .side{display:none;border-radius:999px 999px 6px 6px/220px 220px 6px 6px;background-size:cover;background-position:center;border:1px solid var(--line);box-shadow:0 10px 30px rgba(107,20,38,.18)}
+.hero .side{display:none;border-radius:999px 999px 6px 6px/220px 220px 6px 6px;background-size:cover;background-position:center;border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.45)}
 @media (min-width:900px){.hero{grid-template-columns:1fr 1.5fr 1fr}.hero .side{display:block}}
-.arch{background:var(--card);box-shadow:0 10px 30px rgba(107,20,38,.12)}
+.arch{background:var(--card);box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .ribbon{overflow:hidden;margin:28px -16px 0;padding:6px 0;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .ribbon .rt{display:flex;gap:12px;width:max-content;animation:rib 60s linear infinite}
 .ribbon img{height:190px;width:142px;object-fit:cover;border-radius:4px;border:1px solid var(--line);outline:1px solid var(--line);outline-offset:-5px;display:block}
@@ -80,7 +80,7 @@ h1{font-family:"Playfair Display",Georgia,serif;font-weight:500;color:var(--ink)
 #worn .sub{text-align:center;font-style:italic;margin:0 0 16px}
 .wgrid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;scrollbar-width:thin}
 .wgrid::-webkit-scrollbar{height:6px}.wgrid::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
-.wgrid img{height:380px;width:auto;flex:0 0 auto;scroll-snap-align:start;display:block;box-shadow:0 8px 20px rgba(107,20,38,.15);border:1px solid var(--line);outline:1px solid var(--line);outline-offset:-5px;border-radius:4px;background:var(--line)}
+.wgrid img{height:380px;width:auto;flex:0 0 auto;scroll-snap-align:start;display:block;box-shadow:0 8px 20px rgba(0,0,0,.4);border:1px solid var(--line);outline:1px solid var(--line);outline-offset:-5px;border-radius:4px;background:var(--line)}
 #studio{margin-top:44px}
 #studio h2{text-align:center;font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:18px;margin:0 0 16px;color:var(--gold)}
 .sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
