@@ -209,7 +209,7 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
       im.src="img/"+p.code.toLowerCase().replace("-","")+"-"+n+".jpg";im.alt=p.title+" – photo "+n;im.loading="lazy";
       s.appendChild(im);slides.push(s);
     }
-    p.videos.forEach(function(v,k){slides.push(videoSlide(v,p.videos.length>1?"Video "+(k+1):"Watch video"));});
+    p.videos.forEach(function(v,k){slides.push(videoSlide(v,""));});
     slides.forEach(function(s){track.appendChild(s);});
     media.appendChild(track);
     if(slides.length>1){
