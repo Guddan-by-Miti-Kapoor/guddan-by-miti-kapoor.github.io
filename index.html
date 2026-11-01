@@ -29,8 +29,8 @@ body{margin:0;background:var(--bg);color:var(--txt);font-family:"Cormorant Garam
 @media (min-width:900px){.hero{grid-template-columns:1fr 1.5fr 1fr}.hero .side{display:block}}
 .arch{background:var(--card);box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .ribbon{overflow:hidden;margin:28px -16px 0;padding:6px 0;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.ribbon .rt{display:flex;gap:12px;width:max-content;animation:rib 60s linear infinite}
-.ribbon img{height:190px;width:142px;object-fit:cover;border-radius:4px;border:1px solid var(--line);outline:1px solid var(--line);outline-offset:-5px;display:block}
+.ribbon .rt{display:flex;gap:12px;width:max-content;animation:rib 70s linear infinite}
+.ribbon img{height:230px;width:auto;border-radius:4px;border:1px solid var(--line);outline:1px solid var(--line);outline-offset:-5px;display:block}
 @keyframes rib{to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.ribbon .rt{animation:none}}
 .sm{letter-spacing:.32em;font-size:12px;color:var(--gold);text-transform:uppercase}
@@ -279,9 +279,9 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
   }
   renderChips();
 
-  var rimgs=["gd003-1","worn-1","gd015-1","gd020-1","worn-3","gd025-1","gd006-1","gd013-1","worn-4","gd021-1","gd004-1","gd011-1"];
+  var rimgs=["worn-1","worn-2","worn-3","worn-4","worn-5","worn-6","worn-7"];
   var rt=document.getElementById("rt");
-  rimgs.concat(rimgs).forEach(function(n,i){var im=el("img");im.src="img/"+n+".jpg";im.alt="";im.loading=i<6?"eager":"lazy";rt.appendChild(im);});
+  rimgs.concat(rimgs,rimgs,rimgs).forEach(function(n,i){var im=el("img");im.src="img/"+n+".jpg";im.alt="";im.loading=i<6?"eager":"lazy";rt.appendChild(im);});
 
   var wg=document.getElementById("wgrid");
   for(var k=1;k<=7;k++){var wi=el("img");wi.src="img/worn-"+k+".jpg";wi.alt="A Guddan customer wearing her saree";wi.loading="lazy";wg.appendChild(wi);}
