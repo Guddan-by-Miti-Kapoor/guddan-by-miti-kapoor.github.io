@@ -85,11 +85,11 @@ h1{font-family:Cinzel,"Playfair Display",Georgia,serif;font-weight:500;color:var
 .wa svg{width:17px;height:17px;fill:currentColor}
 #worn{margin-top:44px}
 #worn h2{text-align:center;font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:18px;margin:0 0 4px;color:var(--gold)}
-@media (max-width:600px){.wgrid img{height:320px}}
+@media (max-width:600px){.wgrid{grid-template-columns:repeat(2,1fr)}}
 #worn .sub{text-align:center;font-style:italic;margin:0 0 16px}
-.wgrid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;scrollbar-width:thin}
+.wgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .wgrid::-webkit-scrollbar{height:6px}.wgrid::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
-.wgrid img{height:380px;width:auto;flex:0 0 auto;scroll-snap-align:start;display:block;box-shadow:0 8px 20px rgba(0,0,0,.4);border:1px solid var(--line);outline:1px solid var(--line);outline-offset:-5px;border-radius:4px;background:var(--line)}
+.wgrid img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;display:block;box-shadow:0 8px 20px rgba(0,0,0,.4);border:1px solid var(--line);outline:1px solid var(--line);outline-offset:-5px;border-radius:4px;background:var(--line)}
 #studio{margin-top:44px}
 #studio h2{text-align:center;font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:18px;margin:0 0 16px;color:var(--gold)}
 .sfeat{max-width:400px;margin:0 auto 28px}
@@ -144,8 +144,8 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
 
 <section id="worn">
   <div class="div">❖</div>
-  <h2>Worn with love</h2>
-  <p class="sub">Guddan women, in their Guddan sarees. Swipe to see more →</p>
+  <h2>At our pop-ups</h2>
+  <p class="sub">Meet Guddan in person, at exhibitions and pop-ups.</p>
   <div class="wgrid" id="wgrid"></div>
 </section>
 
@@ -327,7 +327,7 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
   rimgs.concat(rimgs,rimgs,rimgs).forEach(function(n,i){var im=el("img");im.src="img/"+n+".jpg";im.alt="";im.loading=i<6?"eager":"lazy";rt.appendChild(im);});
 
   var wg=document.getElementById("wgrid");
-  for(var k=1;k<=7;k++){var wi=el("img");wi.src="img/worn-"+k+".jpg";wi.alt="A Guddan customer wearing her saree";wi.loading="lazy";wg.appendChild(wi);}
+  for(var k=1;k<=4;k++){var wi=el("img");wi.src="img/popup-"+k+".jpg";wi.alt="Guddan by Miti Kapoor at a pop-up";wi.loading="lazy";wg.appendChild(wi);}
 
   var sg=document.getElementById("sgrid");
   studio.forEach(function(s,idx){
