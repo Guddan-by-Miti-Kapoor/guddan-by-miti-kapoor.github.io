@@ -190,7 +190,19 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
     {code:"GD-024",title:"Sunday Lunch",cat:"Suit Sets",desc:"Teal silk with a woven zari yoke panel and a fine zari border.",photos:2,videos:[]},
     {code:"GD-025",title:"Flowers for Maa",cat:"Suit Sets",desc:"Violet silk with a tall woven floral bouquet and a flowering zari border. Also in mustard and rani pink.",photos:3,videos:[]},
     {code:"GD-026",title:"Second Bloom",cat:"Suit Sets",desc:"Royal blue silk with meenakari roses and a floral zari border. Also in red.",photos:2,videos:[]},
-    {code:"GD-027",title:"Sparrows at the Window",cat:"Suit Sets",desc:"Silk Banarasi suit set in royal blue, woven with zari birds and a tone-on-tone jaal border. Also in green and orange.",photos:1,videos:[]}
+    {code:"GD-027",title:"Sparrows at the Window",cat:"Suit Sets",desc:"Silk Banarasi suit set in royal blue, woven with zari birds and a tone-on-tone jaal border. Also in green and orange.",photos:1,videos:[]},
+    {code:"GD-028",title:"Nani's Embroidery Basket",cat:"Chikankari",desc:"Grey organza with pastel pink and sage Chikankari tulips and an embroidered neckline.",photos:1,videos:[],top:true},
+    {code:"GD-029",title:"Her Dressing Table",cat:"Chikankari",desc:"Peach anarkali with rani pink Chikankari paisleys and an embroidered yoke.",photos:1,videos:[],top:true},
+    {code:"GD-030",title:"Old Lucknow Lanes",cat:"Chikankari",desc:"Dusty rose with white Chikankari florals, a jaali yoke and a zari-edged dupatta.",photos:1,videos:[],top:true},
+    {code:"GD-031",title:"Monsoon Garden",cat:"Chikankari",desc:"Pista green with tonal Chikankari, scattered sequins and a pin-tuck dupatta.",photos:1,videos:[],top:true},
+    {code:"GD-032",title:"Haldi Morning",cat:"Chikankari",desc:"Butter yellow angrakha with white Chikankari bootis and a pleated dupatta.",photos:1,videos:[],top:true},
+    {code:"GD-033",title:"The White Kurta She Loved",cat:"Chikankari",desc:"Ivory Chikankari with jaali panels, pearl detailing and a gold-edged dupatta.",photos:1,videos:[],top:true},
+    {code:"GD-034",title:"Mehendi Afternoon",cat:"Chikankari",desc:"Sage green with pastel threadwork, a beaded neckline and a scalloped jaal.",photos:1,videos:[],top:true},
+    {code:"GD-035",title:"First Rain",cat:"Chikankari",desc:"Lemon Chikankari with white panels, sequins and pastel zigzag threadwork.",photos:1,videos:[],top:true},
+    {code:"GD-036",title:"Tea at Four",cat:"Chikankari",desc:"Mauve angrakha with white Chikankari bootis, a jaali sleeve and a zari-edged dupatta.",photos:1,videos:[],top:true},
+    {code:"GD-037",title:"Winter Wedding",cat:"Chikankari",desc:"Steel blue crush with a pearl and gota neckline and a kota doria dupatta.",photos:1,videos:[],top:true},
+    {code:"GD-038",title:"Moonlit Courtyard",cat:"Chikankari",desc:"Smoky teal crush with a gota patti neckline and sequin bootis.",photos:1,videos:[],top:true},
+    {code:"GD-039",title:"Lucknow Letters",cat:"Chikankari",desc:"Oatmeal with white Chikankari vines, pin-tucks and fine sequin work.",photos:1,videos:[],top:true}
   ];
   var studio=[
     {v:"story",title:"To Varanasi, for the weave"},
@@ -231,7 +243,7 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
     var slides=[];
     for(var n=1;n<=p.photos;n++){
       var s=el("div","slide"),im=el("img");
-      im.src="img/"+p.code.toLowerCase().replace("-","")+"-"+n+".jpg";im.alt=p.title+" – photo "+n;im.loading="lazy";
+      im.src="img/"+p.code.toLowerCase().replace("-","")+"-"+n+".jpg";if(p.top)im.style.objectPosition="center 15%";im.alt=p.title+" – photo "+n;im.loading="lazy";
       s.appendChild(im);slides.push(s);
     }
     p.videos.forEach(function(v,k){slides.push(videoSlide(v,""));});
