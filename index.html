@@ -13,18 +13,26 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#6b1426">
+<meta name="theme-color" content="#f1e2c6">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236b1426'/%3E%3Ctext x='32' y='44' font-size='38' text-anchor='middle' fill='%23f1e2c6' font-family='Georgia'%3EG%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Pinyon+Script&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f1e2c6;--card:#faf2e1;--ink:#6b1426;--txt:#3d2a26;--gold:#a07328;--line:#cdb27a;--btn:#6b1426;--btn-ink:#faf2e1}
-@media (prefers-color-scheme:dark){:root{--bg:#1d0f12;--card:#2a161a;--ink:#e8c98a;--txt:#efe0c6;--gold:#d3a85a;--line:#4d3036;--btn:#d3a85a;--btn-ink:#2a1014}}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--txt);font-family:"Cormorant Garamond",Georgia,serif;font-size:18px;line-height:1.5;
   padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 .wrap{max-width:1000px;margin:0 auto;padding:18px 16px 110px}
 .arch{border:5px double var(--ink);border-bottom:0;border-radius:999px 999px 0 0/170px 170px 0 0;padding:70px 20px 8px;text-align:center;margin:0 auto;max-width:640px}
+.hero{display:grid;grid-template-columns:1fr;gap:18px;align-items:stretch;max-width:1000px;margin:0 auto}
+.hero .side{display:none;border-radius:999px 999px 6px 6px/220px 220px 6px 6px;background-size:cover;background-position:center;border:1px solid var(--line);box-shadow:0 10px 30px rgba(107,20,38,.18)}
+@media (min-width:900px){.hero{grid-template-columns:1fr 1.5fr 1fr}.hero .side{display:block}}
+.arch{background:var(--card);box-shadow:0 10px 30px rgba(107,20,38,.12)}
+.ribbon{overflow:hidden;margin:28px -16px 0;padding:6px 0;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.ribbon .rt{display:flex;gap:12px;width:max-content;animation:rib 60s linear infinite}
+.ribbon img{height:190px;width:142px;object-fit:cover;border-radius:4px;border:1px solid var(--line);outline:1px solid var(--line);outline-offset:-5px;display:block}
+@keyframes rib{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ribbon .rt{animation:none}}
 .sm{letter-spacing:.32em;font-size:12px;color:var(--gold);text-transform:uppercase}
 h1{font-family:"Playfair Display",Georgia,serif;font-weight:500;color:var(--ink);font-size:clamp(46px,14vw,82px);letter-spacing:.03em;margin:4px 0 0;line-height:1.05}
 .tag{letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:var(--gold);margin:6px 0 0}
@@ -94,6 +102,8 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
 </head>
 <body>
 <div class="wrap">
+<div class="hero">
+<div class="side" style="background-image:url(img/gd001-1.jpg)"></div>
 <div class="arch">
   <div class="sm">Introducing</div>
   <h1>GUDDAN</h1>
@@ -104,6 +114,9 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
   <p class="story">Carefully curated Banarasi weaves and Lucknowi Chikankari, crafted with love and chosen for women who appreciate elegance, craftsmanship and all things timeless.</p>
   <div class="sign">With love,<small>Miti Kapoor</small></div>
 </div>
+<div class="side" style="background-image:url(img/gd002-1.jpg)"></div>
+</div>
+<div class="ribbon"><div class="rt" id="rt"></div></div>
 
 <div class="chips" id="chips"></div>
 <div class="grid" id="grid"></div>
@@ -253,6 +266,10 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
     });
   }
   renderChips();
+
+  var rimgs=["gd003-1","worn-1","gd015-1","gd020-1","worn-3","gd025-1","gd006-1","gd013-1","worn-4","gd021-1","gd004-1","gd011-1"];
+  var rt=document.getElementById("rt");
+  rimgs.concat(rimgs).forEach(function(n,i){var im=el("img");im.src="img/"+n+".jpg";im.alt="";im.loading=i<6?"eager":"lazy";rt.appendChild(im);});
 
   var wg=document.getElementById("wgrid");
   for(var k=1;k<=7;k++){var wi=el("img");wi.src="img/worn-"+k+".jpg";wi.alt="A Guddan customer wearing her saree";wi.loading="lazy";wg.appendChild(wi);}
