@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guddan by Miti Kapoor – Catalogue</title>
+<meta name="description" content="Banarasi weaves, Ajrakh, Patola and tissue sarees, curated with love by Miti Kapoor.">
+<meta property="og:title" content="Guddan by Miti Kapoor – Catalogue">
+<meta property="og:description" content="Banarasi weaves, Ajrakh, Patola and tissue sarees, curated with love.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://guddan-by-miti-kapoor.github.io/">
+<meta property="og:image" content="https://guddan-by-miti-kapoor.github.io/preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#6b1426">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236b1426'/%3E%3Ctext x='32' y='44' font-size='38' text-anchor='middle' fill='%23f1e2c6' font-family='Georgia'%3EG%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Pinyon+Script&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f1e2c6;--card:#faf2e1;--ink:#6b1426;--txt:#3d2a26;--gold:#a07328;--line:#cdb27a;--btn:#6b1426;--btn-ink:#faf2e1}
+@media (prefers-color-scheme:dark){:root{--bg:#1d0f12;--card:#2a161a;--ink:#e8c98a;--txt:#efe0c6;--gold:#d3a85a;--line:#4d3036;--btn:#d3a85a;--btn-ink:#2a1014}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:"Cormorant Garamond",Georgia,serif;font-size:18px;line-height:1.5;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.wrap{max-width:1000px;margin:0 auto;padding:18px 16px 110px}
+.arch{border:5px double var(--ink);border-bottom:0;border-radius:999px 999px 0 0/170px 170px 0 0;padding:70px 20px 8px;text-align:center;margin:0 auto;max-width:640px}
+.sm{letter-spacing:.32em;font-size:12px;color:var(--gold);text-transform:uppercase}
+h1{font-family:"Playfair Display",Georgia,serif;font-weight:500;color:var(--ink);font-size:clamp(46px,14vw,82px);letter-spacing:.03em;margin:4px 0 0;line-height:1.05}
+.tag{letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:var(--gold);margin:6px 0 0}
+.div{display:flex;align-items:center;gap:10px;color:var(--gold);margin:16px auto;max-width:300px;font-size:13px}
+.div:before,.div:after{content:"";flex:1;height:1px;background:var(--line)}
+.script{font-family:"Pinyon Script",cursive;color:var(--ink);font-size:44px;line-height:1.1;margin:6px 0 4px}
+.story{max-width:480px;margin:0 auto 10px}
+.sign{font-family:"Pinyon Script",cursive;color:var(--ink);font-size:28px;margin:8px 0 0}
+.sign small{display:block;font-family:"Cormorant Garamond",serif;font-size:16px;color:var(--txt)}
+.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:26px 0 20px}
+.chip{border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;letter-spacing:.08em;text-transform:uppercase;font-size:14px;padding:6px 16px;border-radius:99px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--btn);color:var(--btn-ink);border-color:var(--btn)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px}
+.item{background:var(--card);border:1px solid var(--line);outline:1px solid var(--line);outline-offset:-6px;border-radius:4px;overflow:hidden;position:relative}
+.item[hidden]{display:none}
+/* swipeable media strip */
+.media{position:relative}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;position:relative;aspect-ratio:3/4;background:var(--line)}
+.slide img,.slide video{width:100%;height:100%;object-fit:cover;display:block}
+.slide video{background:#000}
+.play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border:0;background:rgba(0,0,0,.18);cursor:pointer;padding:0}
+.play span{width:64px;height:64px;border-radius:50%;background:rgba(250,242,225,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.play span:after{content:"";border-left:20px solid #6b1426;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+.play em{position:absolute;bottom:30px;left:0;right:0;text-align:center;color:#fff;font-style:normal;font-size:14px;letter-spacing:.12em;text-transform:uppercase;text-shadow:0 1px 4px rgba(0,0,0,.7)}
+.cnt{position:absolute;left:10px;top:10px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;padding:2px 9px;border-radius:99px;pointer-events:none;z-index:2}
+.dots{position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:center;gap:6px;pointer-events:none;z-index:2}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:0 0 2px rgba(0,0,0,.5)}
+.dots i.on{background:#fff}
+.dots i.v{border-radius:2px}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:34px;height:34px;border-radius:50%;border:0;background:rgba(250,242,225,.85);color:#6b1426;font-size:20px;line-height:34px;cursor:pointer;display:none}
+.arrow.l{left:8px}.arrow.r{right:8px}
+@media (hover:hover){.media:hover .arrow{display:block}}
+.meta{padding:14px 16px 18px;text-align:center}
+.code{display:inline-block;border:1px solid var(--gold);color:var(--gold);letter-spacing:.2em;font-size:11px;padding:1px 10px;border-radius:2px;text-transform:uppercase}
+.meta b{display:block;font-family:"Playfair Display",Georgia,serif;font-weight:500;color:var(--ink);font-size:22px;margin-top:6px;line-height:1.25}
+.col{color:var(--gold);font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.desc{font-style:italic;font-size:17px;margin:6px 0 0;line-height:1.35}
+.wa{display:inline-flex;align-items:center;gap:8px;margin-top:12px;background:var(--btn);color:var(--btn-ink);padding:7px 18px;border-radius:99px;font-size:16px;text-decoration:none}
+.wa svg{width:17px;height:17px;fill:currentColor}
+#worn{margin-top:44px}
+#worn h2{text-align:center;font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:18px;margin:0 0 4px;color:var(--gold)}
+#worn .sub{text-align:center;font-style:italic;margin:0 0 16px}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.wgrid img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border:1px solid var(--line);outline:1px solid var(--line);outline-offset:-5px;border-radius:4px;background:var(--line)}
+#studio{margin-top:44px}
+#studio h2{text-align:center;font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:18px;margin:0 0 16px;color:var(--gold)}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.sgrid .play span{width:52px;height:52px}
+.sgrid .slide{aspect-ratio:9/16}
+.sgrid .meta{padding:10px 12px 12px}
+.sgrid .meta b{font-size:18px;margin:0}
+footer{text-align:center;margin-top:48px;color:var(--gold)}
+.links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.links a{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:10px 20px;border-radius:99px;font-size:17px;border:1px solid var(--btn)}
+.links a svg{width:20px;height:20px;fill:currentColor}
+.links .w{background:var(--btn);color:var(--btn-ink)}
+.links .i{background:transparent;color:var(--ink)}
+.share{display:inline-block;margin-top:16px;color:var(--ink);font-size:16px;letter-spacing:.06em;text-decoration:underline;text-underline-offset:4px}
+.num{display:block;margin-top:10px;font-size:15px;color:var(--txt)}
+.fab{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));background:#25D366;color:#fff;text-decoration:none;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(0,0,0,.3);z-index:20}
+.fab svg{width:30px;height:30px;fill:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="arch">
+  <div class="sm">Introducing</div>
+  <h1>GUDDAN</h1>
+  <p class="tag">A name close to my heart.<br>A story woven in love.</p>
+  <div class="div">❖</div>
+  <div class="script">Guddan.</div>
+  <p class="story">Guddan was my mother’s maternal name, a name that became a part of her past after marriage. I wanted to bring it back to life and celebrate the woman who inspired me with her grace, strength and love for timeless traditions.</p>
+  <p class="story">Carefully curated Banarasi weaves and Lucknowi Chikankari, crafted with love and chosen for women who appreciate elegance, craftsmanship and all things timeless.</p>
+  <div class="sign">With love,<small>Miti Kapoor</small></div>
+</div>
+
+<div class="chips" id="chips"></div>
+<div class="grid" id="grid"></div>
+
+<section id="worn">
+  <div class="div">❖</div>
+  <h2>Worn with love</h2>
+  <p class="sub">Guddan women, in their Guddan sarees.</p>
+  <div class="wgrid" id="wgrid"></div>
+</section>
+
+<section id="studio">
+  <div class="div">❖</div>
+  <h2>From the studio</h2>
+  <div class="sgrid" id="sgrid"></div>
+</section>
+
+<footer>
+  <div class="div">❖</div>
+  <p style="margin:0">To order or enquire, reach us on</p>
+  <div class="links" id="links"></div>
+  <a class="share" id="share" href="#">Share this catalogue on WhatsApp</a>
+  <span class="num">WhatsApp +91 77381 14425<br>Instagram @guddan_by_mitikapoor</span>
+</footer>
+</div>
+
+<script>
+(function(){
+  var WA="917738114425";
+  var IG="https://www.instagram.com/guddan_by_mitikapoor";
+  var ICON_WA='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>';
+  var ICON_IG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21.9 8c0-1.7-.5-3.2-1.7-4.3S17.6 2 15.9 2H8.1C6.4 2 4.9 2.5 3.8 3.7S2 6.3 2 8v8c0 1.7.5 3.2 1.7 4.3S6.4 22 8.1 22h7.8c1.7 0 3.2-.5 4.3-1.7s1.7-2.6 1.7-4.3V8zm-2.1 9.6a3.1 3.1 0 0 1-1.8 1.8c-1.2.5-4.1.4-5.4.4s-4.3.1-5.4-.4a3.1 3.1 0 0 1-1.8-1.8c-.5-1.2-.4-4.1-.4-5.6s-.1-4.3.4-5.6a3.1 3.1 0 0 1 1.8-1.8c1.2-.5 4.1-.4 5.4-.4s4.3-.1 5.4.4a3.1 3.1 0 0 1 1.8 1.8c.5 1.2.4 4.1.4 5.6s.1 4.3-.4 5.6z"/></svg>';
+
+  // Codes, names and descriptions were written from the photos; Miti should check them.
+  var pieces=[
+    {code:"GD-001",title:"Marigold Patola",cat:"Patola",desc:"Marigold silk with a geometric Patola weave and a rich magenta zari pallu.",photos:5,videos:[]},
+    {code:"GD-002",title:"Lal Ajrakh",cat:"Ajrakh",desc:"Deep red hand block-printed Ajrakh, finished with mirror and sequin work.",photos:3,videos:["gd002-v1"]},
+    {code:"GD-003",title:"Gulabi Banarasi",cat:"Banarasi",desc:"Soft rose Banarasi with a herringbone weave and silver zari border.",photos:4,videos:[]},
+    {code:"GD-004",title:"Neel Organza",cat:"Banarasi",desc:"Cobalt Banarasi organza with a silver zari leaf border and scattered butis.",photos:2,videos:[]},
+    {code:"GD-005",title:"Jamun Ajrakh",cat:"Ajrakh",desc:"Mauve Ajrakh with indigo bands, mirror work and sequin detailing.",photos:4,videos:["gd005-v1"]},
+    {code:"GD-006",title:"Sunehri Tissue",cat:"Tissue",desc:"Golden tissue silk with a subtle woven pattern that catches the light.",photos:1,videos:["gd006-v1","gd006-v2"]}
+  ];
+  var studio=[
+    {v:"story",title:"To Varanasi, for the weave"},
+    {v:"studio1",title:"Chosen by hand, one by one"},
+    {v:"studio2",title:"Rani pink, unfurled"},
+    {v:"studio3",title:"Inside the Guddan wardrobe"}
+  ];
+
+  function waLink(p){
+    var t="Hi Guddan! I’d like to enquire about "+(p?p.code+" – "+p.title:"your collection")+".";
+    return "https://wa.me/"+WA+"?text="+encodeURIComponent(t);
+  }
+  function el(tag,cls,html){var x=document.createElement(tag);if(cls)x.className=cls;if(html!=null)x.innerHTML=html;return x;}
+
+  // Only one video plays at a time.
+  function stopOthers(cur){document.querySelectorAll("video").forEach(function(v){if(v!==cur&&!v.paused)v.pause();});}
+
+  function videoSlide(name,label,ratioClass){
+    var s=el("div","slide"+(ratioClass||""));
+    var im=el("img");im.src="vid/"+name+".jpg";im.alt=label;im.loading="lazy";s.appendChild(im);
+    var b=el("button","play",'<span></span>'+(label?'<em>'+label+'</em>':''));b.setAttribute("aria-label","Play video");
+    b.onclick=function(){
+      var v=document.createElement("video");
+      v.src="vid/"+name+".mp4";v.controls=true;v.playsInline=true;v.setAttribute("playsinline","");v.poster=im.src;
+      v.addEventListener("play",function(){stopOthers(v);});
+      s.replaceChild(v,im);b.remove();
+      var p=v.play();if(p&&p.catch)p.catch(function(){});
+    };
+    s.appendChild(b);s.dataset.video="1";
+    return s;
+  }
+
+  function buildCard(p){
+    var card=el("article","item");card.dataset.cat=p.cat;
+    var media=el("div","media"),track=el("div","track");
+    var slides=[];
+    for(var n=1;n<=p.photos;n++){
+      var s=el("div","slide"),im=el("img");
+      im.src="img/"+p.code.toLowerCase().replace("-","")+"-"+n+".jpg";im.alt=p.title+" – photo "+n;im.loading="lazy";
+      s.appendChild(im);slides.push(s);
+    }
+    p.videos.forEach(function(v,k){slides.push(videoSlide(v,p.videos.length>1?"Video "+(k+1):"Watch video"));});
+    slides.forEach(function(s){track.appendChild(s);});
+    media.appendChild(track);
+    if(slides.length>1){
+      var cnt=el("div","cnt");cnt.textContent="1 / "+slides.length;media.appendChild(cnt);
+      var dots=el("div","dots");slides.forEach(function(s,i){var d=el("i",(i?"":"on")+(s.dataset.video?" v":""));dots.appendChild(d);});media.appendChild(dots);
+      var l=el("button","arrow l","‹"),r=el("button","arrow r","›");l.setAttribute("aria-label","Previous");r.setAttribute("aria-label","Next");
+      l.onclick=function(){track.scrollBy({left:-track.clientWidth,behavior:"smooth"});};
+      r.onclick=function(){track.scrollBy({left:track.clientWidth,behavior:"smooth"});};
+      media.appendChild(l);media.appendChild(r);
+      var last=0;
+      track.addEventListener("scroll",function(){
+        var i=Math.round(track.scrollLeft/track.clientWidth);
+        if(i===last)return;last=i;
+        cnt.textContent=(i+1)+" / "+slides.length;
+        [].forEach.call(dots.children,function(d,k){d.classList.toggle("on",k===i);});
+        track.querySelectorAll("video").forEach(function(v){v.pause();});
+      },{passive:true});
+    }
+    card.appendChild(media);
+    var m=el("div","meta");
+    m.appendChild(el("span","code",p.code));
+    var b=el("b");b.textContent=p.title;m.appendChild(b);
+    var c=el("span","col");c.textContent=p.cat+(p.videos.length?" · with video":"");m.appendChild(c);
+    var d=el("p","desc");d.textContent=p.desc;m.appendChild(d);
+    var a=el("a","wa",ICON_WA+"<span>Enquire on WhatsApp</span>");a.href=waLink(p);a.target="_blank";a.rel="noopener";
+    var wrap=el("div");wrap.appendChild(a);m.appendChild(wrap);
+    card.appendChild(m);
+    return card;
+  }
+
+  var grid=document.getElementById("grid"),chips=document.getElementById("chips"),filter="All";
+  pieces.forEach(function(p){grid.appendChild(buildCard(p));});
+  var cats=["All"];pieces.forEach(function(p){if(cats.indexOf(p.cat)<0)cats.push(p.cat);});
+  function renderChips(){
+    chips.textContent="";
+    cats.forEach(function(c){
+      var b=el("button","chip");b.textContent=c;b.setAttribute("aria-pressed",String(c===filter));
+      b.onclick=function(){filter=c;renderChips();
+        [].forEach.call(grid.children,function(card){card.hidden=!(c==="All"||card.dataset.cat===c);});
+        stopOthers(null);
+      };
+      chips.appendChild(b);
+    });
+  }
+  renderChips();
+
+  var wg=document.getElementById("wgrid");
+  for(var k=1;k<=6;k++){var wi=el("img");wi.src="img/worn-"+k+".jpg";wi.alt="A Guddan customer wearing her saree";wi.loading="lazy";wg.appendChild(wi);}
+
+  var sg=document.getElementById("sgrid");
+  studio.forEach(function(s){
+    var w=el("div","item");w.appendChild(videoSlide(s.v,""));
+    var m=el("div","meta"),t=el("b");t.textContent=s.title;m.appendChild(t);w.appendChild(m);
+    sg.appendChild(w);
+  });
+
+  var links=document.getElementById("links");
+  var w=el("a","w",ICON_WA+"<span>WhatsApp</span>");w.href=waLink(null);w.target="_blank";w.rel="noopener";links.appendChild(w);
+  var i=el("a","i",ICON_IG+"<span>Instagram</span>");i.href=IG;i.target="_blank";i.rel="noopener";links.appendChild(i);
+
+  var SITE="https://guddan-by-miti-kapoor.github.io/";
+  var sh=document.getElementById("share");
+  sh.href="https://wa.me/?text="+encodeURIComponent("Have a look at Guddan by Miti Kapoor – Banarasi, Ajrakh & Patola sarees ✨ "+SITE);
+  sh.target="_blank";sh.rel="noopener";
+  var fab=el("a","fab",ICON_WA);fab.href=waLink(null);fab.target="_blank";fab.rel="noopener";fab.setAttribute("aria-label","Chat on WhatsApp");
+  document.body.appendChild(fab);
+
+  // Pause any video that scrolls out of view.
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)e.target.querySelectorAll("video").forEach(function(v){v.pause();});});},{threshold:0.2});
+    document.querySelectorAll(".item").forEach(function(x){io.observe(x);});
+  }
+})();
+</script>
+</body>
+</html>
