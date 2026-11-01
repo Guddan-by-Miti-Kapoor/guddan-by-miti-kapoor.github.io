@@ -83,7 +83,18 @@ h1{font-family:"Playfair Display",Georgia,serif;font-weight:500;color:var(--ink)
 .wgrid img{height:380px;width:auto;flex:0 0 auto;scroll-snap-align:start;display:block;box-shadow:0 8px 20px rgba(0,0,0,.4);border:1px solid var(--line);outline:1px solid var(--line);outline-offset:-5px;border-radius:4px;background:var(--line)}
 #studio{margin-top:44px}
 #studio h2{text-align:center;font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:18px;margin:0 0 16px;color:var(--gold)}
-.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.sfeat{display:grid;grid-template-columns:minmax(0,400px) 1fr;gap:36px;align-items:center;max-width:880px;margin:0 auto 34px}
+.sfeat .item{box-shadow:0 12px 34px rgba(0,0,0,.45)}
+.sfeat .slide{aspect-ratio:9/16}
+.sfeat .play span{width:78px;height:78px}
+.ftxt{text-align:left}
+.ftxt .k{letter-spacing:.3em;font-size:12px;color:var(--gold);text-transform:uppercase}
+.ftxt h3{font-family:"Playfair Display",Georgia,serif;font-weight:500;color:var(--ink);font-size:clamp(30px,4vw,44px);line-height:1.15;margin:10px 0 14px}
+.ftxt p{font-size:20px;font-style:italic;margin:0 0 10px}
+.ftxt .sig{font-family:"Pinyon Script",cursive;color:var(--ink);font-size:30px;margin-top:14px}
+@media (max-width:760px){.sfeat{grid-template-columns:1fr;gap:18px}.sfeat .item{max-width:420px;margin:0 auto;width:100%}.ftxt{text-align:center}}
+.sgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+@media (max-width:760px){.sgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}.sgrid .item{flex:0 0 46%;scroll-snap-align:start}}
 .sgrid .play span{width:52px;height:52px}
 .sgrid .slide{aspect-ratio:9/16}
 .sgrid .meta{padding:10px 12px 12px}
@@ -131,6 +142,7 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
 <section id="studio">
   <div class="div">❖</div>
   <h2>From the studio</h2>
+  <div class="sfeat"><div id="sfv"></div><div class="ftxt"><div class="k">A journey to the source</div><h3>To Varanasi, for the weave</h3><p>Not just to shop.</p><p>To find the story behind the weave.</p><div class="sig">Miti</div></div></div>
   <div class="sgrid" id="sgrid"></div>
 </section>
 
@@ -275,8 +287,9 @@ footer{text-align:center;margin-top:48px;color:var(--gold)}
   for(var k=1;k<=7;k++){var wi=el("img");wi.src="img/worn-"+k+".jpg";wi.alt="A Guddan customer wearing her saree";wi.loading="lazy";wg.appendChild(wi);}
 
   var sg=document.getElementById("sgrid");
-  studio.forEach(function(s){
-    var w=el("div","item");w.appendChild(videoSlide(s.v,""));
+  studio.forEach(function(s,idx){
+    var w=el("div","item");
+    if(idx===0){w.appendChild(videoSlide(s.v,""));document.getElementById("sfv").appendChild(w);return;}w.appendChild(videoSlide(s.v,""));
     var m=el("div","meta"),t=el("b");t.textContent=s.title;m.appendChild(t);w.appendChild(m);
     sg.appendChild(w);
   });
